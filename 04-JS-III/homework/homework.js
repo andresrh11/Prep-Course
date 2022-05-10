@@ -124,7 +124,17 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+var j = 1;
+if(arguments.length === 0 ){
+  return 0;
+}else if (arguments.length === 0){
+  return arguments;
+}
 
+for (i=0; i < arguments.length ; i++){
+  j = j * arguments[i];
+}
+return j
 }
 
 
@@ -157,8 +167,11 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-
-  
+var j =n.toString();
+if(j.charAt(0)== 9){
+  return true;
+}
+  return false;
 }
 
 
@@ -166,7 +179,16 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  return arreglo.some(arreglo[1]===arreglo[0]);
+  var j=arreglo[0];
+  for (var i = 1 ; i< arreglo.length;i++){
+    if(arreglo[i] !== j){
+      return false;
+    }
+    return true;
+  }
+
+
+    
 } 
 
 
@@ -175,6 +197,19 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+
+  const solucion=['Marzo','Noviembre','Enero']
+  var j, k, l;
+
+  array.includes('Enero') ? j=true:j=false;
+  array.includes('Marzo') ? k=true:k=false;
+  array.includes('Noviembre') ? l=true:l=false;
+  return j===true && k===true && l===true ? solucion:"No se encontraron los meses pedidos";
+  
+  
+
+
+
 }
 
 
@@ -182,6 +217,10 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  const mayores = array.filter(x => x > 100);
+
+    return mayores;
+  
 }
 
 
@@ -193,6 +232,19 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var j=[];
+  var k = numero;
+  for (var i=0;i<10;i++){
+
+    
+    k=k+2;
+    j.push(k);
+    if(j[i] === i){
+      
+      break ;
+      }
+  } 
+  return j[i]=== i ? 'Se interrumpió la ejecución' : j;
 }
 
 
@@ -202,7 +254,21 @@ function continueStatement(numero) {
   //Devolver el array
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
-  // Tu código:
+  // Tu código:}
+  var j=[];
+  var k = numero;
+  for (var i = 0; i < 10; i++){
+  
+   if (i === 5){
+       continue;
+   }else if(i<10){
+   k = k+2
+   j.push(k);
+   
+   }
+ 
+  }
+  return j;
 }
 
 
